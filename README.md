@@ -7,7 +7,7 @@ aksu@bartin.edu.tr
 
 ## İlk kez çalıştırma
 1. GitHub hesabında `kampus-kulubu` adlı repository oluştur. Add README seçeneğini aç.
-2. ZIP'i aç. `index.html`, `etkinlikler.html`, `hakkimizda.html`, `style.css` ve `README.md` dosyalarını repository köküne yükle (Add file / Upload files). ZIP dosyasının kendisini yükleme.
+2. ZIP'i aç. `index.html`, `etkinlikler.html`, `hakkimizda.html`, `style.css`, `etkinlikler.js`, `theme.js` ve `README.md` dosyalarını repository köküne yükle (Add file / Upload files). ZIP dosyasının kendisini yükleme.
 3. Commit changes ile kaydet.
 4. Code / Codespaces / Create codespace on main seç. Kurulumun bitmesini bekle.
 5. Terminal / New Terminal aç. Aşağıdaki komutu çalıştır:
@@ -24,9 +24,11 @@ Codespaces varsayılan ortamında Python bulunur. `python3 --version` ile kontro
 
 ## Dosyalar
 - index.html: Ana Sayfa
-- etkinlikler.html: Üç örnek etkinlik
+- etkinlikler.html: Altı örnek etkinlik ve arama arayüzü
 - hakkimizda.html: Proje tanıtımı
-- style.css: Ortak renkler, sayfa düzeni ve mobil görünüm
+- style.css: Ortak renkler, sayfa düzeni, mobil görünüm ve hover efektleri
+- etkinlikler.js: Etkinlik arama ve filtreleme
+- theme.js: Açık/koyu tema düğmesi
 
 ## Copilot alıştırması
 Önce dosyayı aç. Chat içinde şunu sor:
@@ -37,7 +39,7 @@ Sonra şu küçük değişikliği iste:
 
 > Yalnızca etkinlikler.html dosyasına mevcut article yapısını kullanarak bir GitHub Atölyesi ekle. Tarihi 3 Aralık, saati 14.00 ve yeri Bilgisayar Laboratuvarı olsun. Yeni paket veya JavaScript ekleme. Değişen satırları açıkla.
 
-Öneriyi oku. Dört etkinliğin göründüğünü ve diğer sayfaların açıldığını kontrol et. AI_NOTLARI.md dosyasına hangi yardımı aldığını ve nasıl test ettiğini yaz. Copilot erişimin yoksa bir article bloğunu kendin çoğalt.
+Öneriyi oku. Yedi etkinliğin göründüğünü ve diğer sayfaların açıldığını kontrol et. AI_NOTLARI.md dosyasına hangi yardımı aldığını ve nasıl test ettiğini yaz. Copilot erişimin yoksa bir article bloğunu kendin çoğalt.
 
 ## Kaydet ve GitHub'a gönder
 Source Control bölümünde diff'i incele. İlgili dosyaları + ile stage et. Anlamlı mesajla Commit yap. Ardından Sync Changes veya Push seç. GitHub repository sayfasında yeni commit'i doğrula.

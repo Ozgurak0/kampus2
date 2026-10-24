@@ -1,11 +1,14 @@
 /* Ortak görünüm: Üç HTML dosyası bu dosyayı kullanır. */
 * { box-sizing: border-box; }
-body { margin: 0; font-family: Arial, sans-serif; color: #183044; background: #f3f7fa; line-height: 1.65; }
-header { background: #102c40; color: white; padding: 24px max(6vw, 20px); }
+body { min-height: 100vh; margin: 0; font-family: Arial, sans-serif; color: #183044; background: #f3f7fa; line-height: 1.65; transition: background-color 200ms ease, color 200ms ease; }
+header { position: relative; background: #102c40; color: white; padding: 24px max(6vw, 20px); }
 .brand { font-weight: bold; font-size: 23px; }
 nav { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 12px; }
-nav a { color: #c5e6ee; text-decoration: none; padding: 4px 0; }
+nav a { position: relative; display: inline-block; color: #c5e6ee; text-decoration: none; padding: 4px 0; transition: color 180ms ease, transform 180ms ease; }
+nav a::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; background: #72e1c5; content: ""; transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; }
 nav a[aria-current="page"] { color: white; border-bottom: 3px solid #72e1c5; }
+nav a:hover { color: #72e1c5; transform: translateY(-2px); }
+nav a:hover::after { transform: scaleX(1); }
 a { color: #086767; }
 a:focus-visible { outline: 3px solid #e1a82b; outline-offset: 5px; }
 main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; min-height: 65vh; }
@@ -13,10 +16,151 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; min-height: 65vh; 
 h1 { font-size: clamp(34px, 5vw, 60px); line-height: 1.12; max-width: 850px; margin: 20px 0; }
 .intro { font-size: 21px; max-width: 730px; color: #496272; }
 .button { display: inline-block; margin: 16px 0 32px; padding: 13px 24px; background: #087d70; color: white; border-radius: 6px; text-decoration: none; font-weight: bold; }
+.event-search { max-width: 730px; margin-top: 32px; }
+.event-search label { display: block; margin-bottom: 8px; font-weight: bold; }
+.event-search-controls { display: flex; align-items: center; gap: 12px; }
+.event-search-controls input { flex: 1; min-width: 0; min-height: 52px; padding: 11px 16px; border: 1px solid #9aadb8; border-radius: 6px; background: white; font: inherit; }
+.event-search-controls button { min-height: 40px; padding: 0 16px; border: 1px solid #b8d8d2; border-radius: 999px; background-color: white; color: #087d70; font: inherit; font-size: 14px; font-weight: bold; cursor: pointer; }
+.event-search-controls button:hover { border-color: #087d70; background-color: #087d70; color: white; }
+.event-search-controls button:active { transform: translateY(1px); }
+.event-search-controls input:focus-visible, .event-search-controls button:focus-visible { outline: 3px solid #e1a82b; outline-offset: 3px; }
+#event-search-input { min-height: 54px; padding: 12px 16px; border-color: #b8c9d1; border-radius: 8px; box-shadow: 0 2px 6px rgb(24 48 68 / 6%); }
+#event-search-clear { min-width: 96px; min-height: 46px; padding: 0 14px; border-radius: 8px; background-color: #eaf5f2; }
+.event-search-count { margin: 12px 0 0; color: #496272; }
+.event-search-empty { margin: 12px 0 0; padding: 14px 18px; border-left: 4px solid #db9d27; background: #fff4d8; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
 article { background: white; border-top: 4px solid #087d70; padding: 25px; border-radius: 6px; }
+section[aria-label="Örnek etkinlikler"] article { transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
+section[aria-label="Örnek etkinlikler"] article:hover { transform: translateY(-5px); box-shadow: 0 10px 24px rgb(24 48 68 / 14%); border-top-color: #10a98c; }
 article h2 { margin: 10px 0; font-size: 23px; }
 .meta { font-size: 14px; color: #087d70; font-weight: bold; }
 .note { padding: 18px 22px; border-left: 4px solid #db9d27; background: #fff4d8; margin-top: 30px; }
 footer { border-top: 1px solid #cad8e0; padding: 24px 6vw; color: #496272; font-size: 14px; }
 @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } main { padding-top: 28px; } }
+body.dark {
+  color-scheme: dark;
+  color: #e7edf2;
+  background-color: #111a22;
+}
+body.dark header { background: #0b141b; }
+body.dark .intro,
+body.dark .event-search-count,
+body.dark footer { color: #b8c6d1; }
+body.dark .eyebrow,
+body.dark .meta,
+body.dark main a { color: #77dfc3; }
+body.dark main a.button { color: white; }
+body.dark article {
+  background: #1b2933;
+  border-top-color: #77dfc3;
+}
+body.dark .event-search-controls input {
+  background: #1b2933;
+  border-color: #52636e;
+  color: #e7edf2;
+}
+body.dark .event-search-controls button {
+  background-color: #1b2933;
+  border-color: #77dfc3;
+  color: #77dfc3;
+}
+body.dark .event-search-controls button:hover {
+  background-color: #087d70;
+  border-color: #087d70;
+  color: white;
+}
+body.dark .event-search-empty,
+body.dark .note {
+  background: #302b20;
+  color: #f3e5bd;
+}
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: max(6vw, 20px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid rgb(197 230 238 / 35%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 9%);
+  color: white;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#theme-toggle::before {
+  content: "☾";
+  font-size: 18px;
+  line-height: 1;
+}
+#theme-toggle:hover {
+  border-color: #72e1c5;
+  background-color: rgb(255 255 255 / 16%);
+}
+body.dark #theme-toggle::before { content: "☀"; }
+#theme-toggle:focus-visible {
+  outline: 3px solid #e1a82b;
+  outline-offset: 3px;
+}
+@media (max-width: 420px) {
+  .brand { font-size: 19px; }
+  #theme-toggle {
+    min-height: 36px;
+    padding: 0 10px;
+    gap: 6px;
+    font-size: 12px;
+  }
+  #event-search-clear { min-width: 84px; padding: 0 10px; }
+}
+
+button,
+.button {
+  background-image: linear-gradient(135deg, #087d70, #10a98c);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+}
+.button,
+.event-search-controls button,
+#theme-toggle {
+  transition: background-size 180ms ease, background-color 180ms ease, border-color 160ms ease, color 160ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+.button:hover,
+.event-search-controls button:hover,
+#theme-toggle:hover {
+  background-size: 100% 100%;
+  box-shadow: 0 5px 14px rgb(8 125 112 / 20%);
+  transform: scale(1.03);
+}
+#theme-toggle:active {
+  transform: scale(0.97);
+}
+@media (prefers-reduced-motion: reduce) {
+  nav a,
+  nav a::after {
+    transition: none;
+  }
+  nav a:hover {
+    transform: none;
+  }
+  .button,
+  .event-search-controls button,
+  #theme-toggle {
+    transition: none;
+  }
+  section[aria-label="Örnek etkinlikler"] article {
+    transition: none;
+  }
+  .button:hover,
+  .event-search-controls button:hover,
+  #theme-toggle:hover {
+    transform: none;
+  }
+  section[aria-label="Örnek etkinlikler"] article:hover {
+    transform: none;
+  }
+}

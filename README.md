@@ -33,12 +33,12 @@ Proje için npm, framework, veritabanı veya ek paket kurulumu gerekmez.
 ├── etkinlikler.html
 ├── hakkimizda.html
 ├── style.css
-├── etkinlikler.js
+├── script.js
 ├── tema.js
 └── README.md
 ```
 
-`style.css` üç sayfanın ortak stil dosyasıdır. `etkinlikler.js` etkinlikler sayfasındaki aramayı, `tema.js` tüm sayfalardaki tema düğmesini yönetir.
+`style.css` üç sayfanın ortak stil dosyasıdır. `script.js` etkinlikler sayfasındaki aramayı, `tema.js` tüm sayfalardaki tema düğmesini yönetir.
 
 ## Çalıştırma
 

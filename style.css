@@ -2,7 +2,13 @@
 * { box-sizing: border-box; }
 body { min-height: 100vh; margin: 0; font-family: Arial, sans-serif; color: #183044; background: #f3f7fa; line-height: 1.65; transition: background-color 200ms ease, color 200ms ease; }
 header { position: relative; background: #102c40; color: white; padding: 24px max(6vw, 20px); }
-.brand { font-weight: bold; font-size: 23px; }
+.brand {
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-shadow: 0 1px 10px rgb(114 225 197 / 22%);
+}
 nav { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 12px; }
 nav a { position: relative; display: inline-block; color: #c5e6ee; text-decoration: none; padding: 4px 0; transition: color 180ms ease, transform 180ms ease; }
 nav a::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; background: #72e1c5; content: ""; transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; }
@@ -107,7 +113,7 @@ body.dark #theme-toggle::before { content: "☀"; }
   outline-offset: 3px;
 }
 @media (max-width: 420px) {
-  .brand { font-size: 19px; }
+  .brand { font-size: clamp(1.15rem, 5vw, 1.25rem); }
   #theme-toggle {
     min-height: 36px;
     padding: 0 10px;

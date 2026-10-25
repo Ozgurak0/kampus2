@@ -23,4 +23,4 @@ Yapay zekanın önerdiği temel arama mantığını ve filtreleme yapısını do
   `addEventListener('input', ...)` yapısı, arama çubuğuna yazılan her bir harfi anlık olarak takip eder. Kullanıcı klavyeden bir tuşa basıp harf girdiğinde veya sildiğinde tarayıcı bu olayı algılar ve filtreleme fonksiyonunu hemen çalıştırır.
 
 * **Filtreleme Koşulu Açıklaması:** 
-  Kodun içerisinde kullanılan `toLowerCase()` fonksiyonu, aranan kelimeyi ve etkinlik başlıklarını tamamen küçük harfe dönüştürür. Bu sayede kullanıcı büyük harfle de yazsa, küçük harfle de yazsa karşılaştırma hatasız yapılır ve büyük/küçük harf farkı ortadan kalkmış olur.
+ Arama kelimesi ile etkinlik başlıklarını toLocaleLowerCase("tr-TR") fonksiyonuyla Türkçe yerel kurallarına göre küçük harfe dönüştürüyorum. trim() fonksiyonu da arama ifadesinin başındaki ve sonundaki boşlukları temizliyor. Böylece büyük/küçük harf farkı ve kenar boşlukları arama sonucunu etkilemiyor.

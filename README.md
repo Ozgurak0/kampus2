@@ -1,3 +1,5 @@
+> **GitHub Repository:** [https://github.com/Ozgurak0/YazilimKulubu](https://github.com/Ozgurak0/YazilimKulubu)
+
 # Yazılım Kulübü
 
 BPR201 - İnternet Tabanlı Programlama dersi kapsamında hazırlanan, yazılım geliştirmeye yeni başlayan öğrenciler için örnek bir kulüp tanıtım ve etkinlik sitesidir. Proje; HTML ile sayfa yapısını, CSS ile görsel düzeni ve JavaScript ile temel etkileşimleri göstermeyi amaçlar.
